@@ -18,4 +18,26 @@ For BGR \rightarrow Gray conversion we use the flags cv2.COLOR_BGR2GRAY. Similar
 ```
 import cv2
 flags = [i for i in dir(cv2) if i.startswith('COLOR_')]
-print flags ```
+print flags
+
+```
+# Image Thresholding
+
+* Here, the matter is straight forward. If pixel value is greater than a threshold value, it is assigned one value (may be white), else it is assigned another value (may be black).
+* The function used is cv2.threshold.
+* First argument is the source image, which should be a grayscale image.
+* Second argument is the threshold value which is used to classify the pixel values.
+* Third argument is the maxVal which represents the value to be given if pixel value is more than (sometimes less than) the threshold value.
+* OpenCV provides different styles of thresholding and it is decided by the fourth parameter of the function.
+
+Different types are:
+
+
+```
+cv2.THRESH_BINARY
+cv2.THRESH_BINARY_INV
+cv2.THRESH_TRUNCV
+cv2.THRESH_TOZEROV
+cv2.THRESH_TOZERO_INV
+
+```
